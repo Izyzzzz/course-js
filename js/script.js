@@ -1,24 +1,23 @@
 'use strict';
 
 let money = prompt("Ваш бюджет на месяц?", ""),
-    time = prompt("Введите дату в формате YYYY-MM-DD", ""),
-    expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
-    expensesMoney = prompt("Во сколько обойдется?", ""),
+    time = prompt("Введите дату в формате YYYY-MM-DD", ""),    
     appData = {
         moneyData: money,
         timeData: time,
-        expenses: {
-            name: expensesName,
-            money: expensesMoney
-        },
+        expenses: {},
         optionalExpenses: {},
         income: [],
         savings: false
     };
+let expensesNameOne = prompt("Введите обязательную статью расходов в этом месяце", "");
+    appData.expenses[expensesNameOne] = prompt("Во сколько обойдется?", "");
+let expensesNameTwo = prompt("Введите обязательную статью расходов в этом месяце", "");
+    appData.expenses[expensesNameTwo] = prompt("Во сколько обойдется?", "");
 
 alert("Бюджет на 1 день - " + money / 30);
 
 // Проверка записи данных
-// console.log(money, time);
-// console.log(appData.moneyData, appData.timeData);
-// console.log(appData.expenses.name, appData.expenses.money);
+console.log(money, time);
+console.log(appData.moneyData, appData.timeData);
+console.log(appData.expenses);
