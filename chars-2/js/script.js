@@ -14,8 +14,9 @@ let money = +prompt("Ваш бюджет на месяц?", ""),
 // Цыкл for
 for (let i = 0; i < 2; i++) {
     let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
-        expensesMoney = prompt("Во сколько обойдется?", "");
-    if ( (typeof(expensesName))=== 'string' && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+        expensesMoney = +prompt("Во сколько обойдется?", "");
+    if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
+        && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
         && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
             console.log("done");
             appData.expenses[expensesName] = expensesMoney;
@@ -26,12 +27,13 @@ for (let i = 0; i < 2; i++) {
     
 };
 
-// Цыкл while
+//Цыкл while
 // let i = 0;
 // while ( i < 2 ) {
 //     let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
 //         expensesMoney = prompt("Во сколько обойдется?", "");
-//     if ( (typeof(expensesName))=== 'string' && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+//     if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
+//         && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
 //         && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
 //             console.log("done");
 //             appData.expenses[expensesName] = expensesMoney;
@@ -43,12 +45,13 @@ for (let i = 0; i < 2; i++) {
     
 // };
 
-// Цыкл do while
+//Цыкл do while
 // let i = 0;
 // do {
 //     let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
 //         expensesMoney = prompt("Во сколько обойдется?", "");
-//     if ( (typeof(expensesName))=== 'string' && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+//     if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
+//         && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
 //         && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
 //             console.log("done");
 //             appData.expenses[expensesName] = expensesMoney;
