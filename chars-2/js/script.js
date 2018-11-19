@@ -16,7 +16,7 @@ for (let i = 0; i < 2; i++) {
     let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
         expensesMoney = +prompt("Во сколько обойдется?", "");
     if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
-        && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+        && expensesName != null && expensesMoney != null 
         && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
             console.log("done");
             appData.expenses[expensesName] = expensesMoney;
@@ -33,7 +33,7 @@ for (let i = 0; i < 2; i++) {
 //     let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
 //         expensesMoney = prompt("Во сколько обойдется?", "");
 //     if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
-//         && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+//         && expensesName != null && expensesMoney != null 
 //         && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
 //             console.log("done");
 //             appData.expenses[expensesName] = expensesMoney;
@@ -51,7 +51,7 @@ for (let i = 0; i < 2; i++) {
 //     let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
 //         expensesMoney = prompt("Во сколько обойдется?", "");
 //     if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
-//         && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+//         && expensesName != null && expensesMoney != null 
 //         && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
 //             console.log("done");
 //             appData.expenses[expensesName] = expensesMoney;
