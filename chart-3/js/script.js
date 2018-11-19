@@ -29,7 +29,7 @@ function chooseExpenses(){
         let expensesName = prompt("Введите обязательную статью расходов в этом месяце", ""),
             expensesMoney = +prompt("Во сколько обойдется?", "");
         if ( (typeof(expensesName))=== 'string' && Number(expensesMoney) === expensesMoney
-            && (typeof(expensesName)) != null && (typeof(expensesMoney)) != null 
+            && expensesName != null && expensesMoney != null 
             && expensesName != '' && expensesMoney != '' && expensesName.length < 50) {
                 console.log("done");
                 appData.expenses[expensesName] = expensesMoney;
@@ -45,7 +45,7 @@ chooseExpenses();
 function chooseOptExpenses(){
     for (let i =0; i < 3; ++i){
         let optExpensesName = prompt("Статья необязательных расходов?", "");
-        if ((typeof(optExpensesName))=== 'string' && (typeof(optExpensesName)) != null
+        if ((typeof(optExpensesName))=== 'string' && optExpensesName != null
             && optExpensesName != '' && optExpensesName.length < 50){
             appData.optionalExpenses[i + 1] = optExpensesName;
         } else {
