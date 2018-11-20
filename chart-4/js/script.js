@@ -88,7 +88,7 @@ let appData = {
         
     }
 };
-
+appData.chooseIncome();
 // Цикл for in
 console.log('Наша программа включает в себя данные: ');
 for ( let key in appData) {
