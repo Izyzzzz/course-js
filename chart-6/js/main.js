@@ -50,6 +50,7 @@ button.addEventListener('click', function () {
     countBudgetBtn.disabled = false;
 });
 
+
 expensesItemBtn.addEventListener('click', function () {
     let sum = 0;
     
@@ -155,5 +156,6 @@ let appData = {
     expenses: {},
     optionalExpenses: {},
     income: [],
-    savings: false
+    savings: false,
+    sumDop: 0
     };
