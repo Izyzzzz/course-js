@@ -65,10 +65,9 @@ window.addEventListener('DOMContentLoaded', function () {
         let timer = document.getElementById(id),
             hours = timer.querySelector('.hours'),
             minutes = timer.querySelector('.minutes'),
-            seconds = timer.querySelector('.seconds'),
-            timeInterval = setInterval(updateClock, 1000);
+            seconds = timer.querySelector('.seconds');
 
-        function updateClock() {
+        let timeInterval = setTimeout(function updateClock() {
             let t = getTimeRemaining(endtime);
             hours.textContent = plusZero(t.hours);
             minutes.textContent = plusZero(t.minutes);
@@ -80,7 +79,8 @@ window.addEventListener('DOMContentLoaded', function () {
                 minutes.textContent = '00';
                 seconds.textContent = '00';
             }
-        }
+            setTimeout(updateClock, 1000);
+        });
 
         function stop() {
             clearTimeout(timeInterval);
