@@ -266,7 +266,8 @@ window.addEventListener('DOMContentLoaded', function () {
         totalValue = document.getElementById('total'),
         personsSum = 0,
         daysSum = 0,
-        total = 0;
+        total = 0,
+        ratio = 1;
 
         totalValue.innerHTML = 0;
 
@@ -279,7 +280,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
         persons.addEventListener('change', function() {
             personsSum = +this.value;
-            total = (daysSum + personsSum)*4000;
+            total = (daysSum + personsSum)*4000*ratio;
 
             if(restDays.value == '' || personsSum == 0) {
                 totalValue.innerHTML = 0;
@@ -290,7 +291,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
         restDays.addEventListener('change', function() {
             daysSum = +this.value;
-            total = (daysSum + personsSum)*4000;
+            total = (daysSum + personsSum)*4000*ratio;
 
             if(persons.value == '' || daysSum == 0) {
                 totalValue.innerHTML = 0;
@@ -300,11 +301,13 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         place.addEventListener('change', function(){
+            ratio = this.options[this.selectedIndex].value;
             if (restDays.value == '' || persons.value == '') {
                 totalValue.innerHTML = 0;
             } else {
                 let a = total;
-                totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+
+                totalValue.innerHTML = a * ratio;
             }
         });
 
