@@ -14,26 +14,22 @@ function form() {
 
     statusMessage.classList.add('status');
 
-
-    function sendForm(elem) {
+    
+    function sendForm(elem, numElem) {
+        let input = elem.getElementsByTagName('input');
         elem.addEventListener('submit', function (e) {
             e.preventDefault();
-            let formInput = elem.getElementsByTagName('input');
+            let formInputTwo = elem.getElementsByTagName('input');
             let flag = false;
-            for (let i = 0; i < formInput.length; i++) {
-                console.log(formInput[i].value.replace(/\D/g, "").length);
-                if (formInput[i].value.replace(/\D/g, "").length > 10) {
+            
+                if (formInputTwo[numElem].value.replace(/\D/g, "").length > 10 ) {
                     flag = true;
-                } else {
+                }  else {
                     flag = false;
-                    break;
                 }
-            }
 
             if (flag) {
-                elem.appendChild(statusMessage);
-
-                let input = elem.getElementsByTagName('input');
+                elem.appendChild(statusMessage);                
 
                 let formData = new FormData(elem);
 
@@ -74,22 +70,24 @@ function form() {
             }
 
         });
+
+        popapClose.addEventListener('click', function () {
+
+            statusMessage.innerHTML = '';
+    
+            for (let i = 0; i < input.length; i++) {
+                input[i].value = '';
+            }
+    
+        });
     }
 
-    sendForm(form);
-    sendForm(formCont);
+    sendForm(form, 0);
+    sendForm(formCont, 1);
 
 
 
-    popapClose.addEventListener('click', function () {
-
-        statusMessage.innerHTML = '';
-
-        for (let i = 0; i < input.length; i++) {
-            input[i].value = '';
-        }
-
-    });
+    
 }
 
 module.exports = form;

@@ -2,7 +2,9 @@ function tabs() {
     // Получение объектов манипуляции для табов.
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
-        tabContent = document.querySelectorAll('.info-tabcontent');
+        tabContent = document.querySelectorAll('.info-tabcontent'),
+        descrbtn = document.querySelectorAll('.description-btn'),
+        overlay = document.querySelector('.overlay');
 
     // Функция скрытия табов
     function hideTabContent(a) {
@@ -36,6 +38,16 @@ function tabs() {
             }
         }
     });
+
+    moreTabs(0);
+
+    function moreTabs(d) {
+        descrbtn[d].addEventListener('click', function () {
+            overlay.style.display = 'block';
+            this.classList.add('more-splash');
+            document.body.style.overflow = 'hidden';
+        });
+    }
 
 }
 
