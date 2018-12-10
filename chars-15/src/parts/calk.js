@@ -23,10 +23,10 @@ function calk() {
         personsSum = +this.value;
         total = (daysSum + personsSum) * 4000 * ratio;
 
-        if (restDays.value == '' || personsSum == 0) {
+        if (restDays.value == '' || restDays.value == 0 || personsSum == 0) {
             totalValue.innerHTML = 0;
         } else {
-            animateValue("total", 0, total, 500);
+            animateValue("total", 0, total);
         }
     });
 
@@ -34,10 +34,10 @@ function calk() {
         daysSum = +this.value;
         total = (daysSum + personsSum) * 4000 * ratio;
 
-        if (persons.value == '' || daysSum == 0) {
+        if (persons.value == '' || persons.value == 0 || daysSum == 0) {
             totalValue.innerHTML = 0;
         } else {
-            animateValue("total", 0, total, 500);
+            animateValue("total", 0, total);
         }
     });
 
@@ -49,11 +49,11 @@ function calk() {
             let a = total;
 
             let totalA = a * ratio;
-            animateValue("total", 0, totalA, 500);
+            animateValue("total", 0, totalA);
         }
     });
 
-    function animateValue(id, start, end, duration) {
+    function animateValue(id, start, end) {
         let current = start;
         let increment = 50;
         let timer = setInterval(function () {
