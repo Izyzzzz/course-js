@@ -22,11 +22,7 @@ function form() {
             let formInputTwo = elem.getElementsByTagName('input');
             let flag = false;
             
-                if (formInputTwo[numElem].value.replace(/\D/g, "").length > 10 ) {
-                    flag = true;
-                }  else {
-                    flag = false;
-                }
+            (formInputTwo[numElem].value.replace(/\D/g, "").length > 10 ) ?  flag = true : flag = false
 
             if (flag) {
                 elem.appendChild(statusMessage);                

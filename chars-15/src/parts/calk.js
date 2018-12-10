@@ -23,27 +23,19 @@ function calk() {
         personsSum = +this.value;
         total = (daysSum + personsSum) * 4000 * ratio;
 
-        if (restDays.value == '' || restDays.value == 0 || personsSum == 0) {
-            totalValue.innerHTML = 0;
-        } else {
-            animateValue("total", 0, total);
-        }
+        (restDays.value == '' || restDays.value == 0 || personsSum == 0) ?  totalValue.innerHTML = 0 : animateValue("total", 0, total)
     });
 
     restDays.addEventListener('change', function () {
         daysSum = +this.value;
         total = (daysSum + personsSum) * 4000 * ratio;
 
-        if (persons.value == '' || persons.value == 0 || daysSum == 0) {
-            totalValue.innerHTML = 0;
-        } else {
-            animateValue("total", 0, total);
-        }
+        (persons.value == '' || persons.value == 0 || daysSum == 0) ? totalValue.innerHTML = 0 : animateValue("total", 0, total)
     });
 
     place.addEventListener('change', function () {
         ratio = this.options[this.selectedIndex].value;
-        if (restDays.value == '' || persons.value == '') {
+        if (restDays.value == '' || persons.value == '' || persons.value == 0 || restDays.value == 0) {
             totalValue.innerHTML = 0;
         } else {
             let a = total;

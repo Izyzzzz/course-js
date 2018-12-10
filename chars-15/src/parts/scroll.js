@@ -16,8 +16,9 @@ function scroll() {
                 if (start === null) start = time;
                 let progress = time - start,
                     r = (toBlock < 0 ? Math.max(widthTop - progress / speed, widthTop + toBlock) : Math.min(widthTop + progress / speed, widthTop + toBlock));
-                document.documentElement.scrollTo(0, r);
-                if (r != widthTop + toBlock) {
+                    let rill = r - 70;
+                    document.documentElement.scrollTo(0, rill);
+                if (rill != widthTop + toBlock) {
                     requestAnimationFrame(step)
                 } else {
                     location.hash = hash

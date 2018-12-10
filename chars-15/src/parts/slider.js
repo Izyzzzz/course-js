@@ -22,13 +22,6 @@ function slider() {
         dots.forEach((item) => item.classList.remove('dot-active'));
         slides[slideIndex - 1].style.display = 'block';
         dots[slideIndex - 1].classList.add('dot-active');
-        slides[slideIndex - 1].animate([{
-                transform: 'translateX(500px)'
-            },
-            {
-                transform: 'translateX(0px)'
-            }
-        ], 500);
     }
 
     function plusSlides(n) {
@@ -41,10 +34,26 @@ function slider() {
 
     prev.addEventListener('click', function () {
         plusSlides(-1);
+        
+        slides[slideIndex - 1].animate([{
+            transform: 'translateX(-500px)'
+        },
+        {
+            transform: 'translateX(0px)'
+        }
+    ], 500);
     });
 
     next.addEventListener('click', function () {
         plusSlides(1);
+        
+        slides[slideIndex - 1].animate([{
+            transform: 'translateX(500px)'
+        },
+        {
+            transform: 'translateX(0px)'
+        }
+    ], 500);
     });
 
     dotsWrap.addEventListener('click', function (event) {
